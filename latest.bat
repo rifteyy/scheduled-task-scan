@@ -58,6 +58,7 @@ for /l %%A in (1 1 !task_index!) do (
 )
 for %%A in (safe suspicious unsigned signed invalid_entry heuristic_detections unknown_path pathless_entry submitted) do set "%%A=0"
 for /l %%# in (1 1 !task_index!) do (
+	set "file_path[%%#]=!file_path[%%#]:"=!"
 	set "fpath=!file_path[%%#]!"
 	echo=!ESC![1;1HScanning task "!task_name[%%#]!"...                                                                               
 	if "!fpath!"=="" (

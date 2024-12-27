@@ -92,6 +92,7 @@ for /l %%# in (1 1 !task_index!) do (
 		)	
 	) else set "heur=false"
 	) else (
+		set "file_path[%%#]=!file_path[%%#]:"=!"
 		for /f "delims=: tokens=1,*" %%A in ('sigcheck.exe -accepteula -nobanner -vt -vs "!file_path[%%#]!"') do (
 			set "val=%%A"
 			set "val2=%%B"
